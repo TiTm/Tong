@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Cv_Android——Tong/ming. by TiTm</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/TiTm/CV">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/TiTm/CV/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/TiTm/CV/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Cv_Android——Tong/ming.</h1>
+          <p>个人简历。</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/TiTm">TiTm</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>
+<a id="-" class="anchor" href="#-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>-</h1>
+
+<p>个人简历</p>
+
+<hr>
+
+<p>姓 名：佟铭        性 别：  男
+籍 贯：河北保定市 </p>
+
+<hr>
+
+<p>毕业院校： 河北软件职业技术学院  主修课程    ：Android开发     学 历： 大专  专 业：  软件技术</p>
+
+<hr>
+
+<p>求职意向： Android开发工程师</p>
+
+<hr>
+
+<p>到岗时间:   面试通过后一周内即可入职
+期望城市： 北京    期望薪资: 3K—4K
+邮箱：   <a href="mailto:sks1995@126.com">sks1995@126.com</a></p>
+
+<hr>
+
+<p>个人技能    </p>
+
+<hr>
+
+<p>熟练使用Android-Studio编译工具，DeBug测试及内置插件的使用。
+有良好的编程习惯，使用GitHub，使用Android官方开发手册。 
+熟练掌握Android常用框架，okhttp,Retrofit网络框架，GreenDao，Gson等前沿框架。
+熟练使用百度api接口。如百度定位。
+熟练掌握Android应用UI设计，熟练各种常用布局。
+熟知Android四大组件与handler机制。 
+熟练Android中AlphaAnimation动画库。 
+了解android socket编程，Jsoup解析html。</p>
+
+<hr>
+
+<p>项目经验</p>
+
+<hr>
+
+<p>一、手机通讯录App
+项目时间： 一周
+开发工具： Android Studio
+使用技术： SQLite+简单算法
+功能实现： 1.调用系统通讯录数据，实现增删改查，与系统通讯录实现同步
+2.根据通讯录姓名利用算法转换成编码对图片，头像，渲染着色。
+3.对通讯录姓名实现首字母排序。
+4.SearchView搜索控件，通过算法实现查找用户。 </p>
+
+<hr>
+
+<p>二、.知乎日报App模仿。</p>
+
+<hr>
+
+<p>项目时间： 10天
+开发工具： Android Studio
+使用技术： Retrofit+okhttp+Gson+Mvp
+功能实现： 1.引导页：运用AlphaAnimation，对图片进行缩放处理，进入app主页。
+2.首页：头部自定义轮播图热门消息展示，内容日报利用recyclerview根据日期分组展示日报列表。 同时实现下拉刷新，上拉加载更多。
+3.日报详情：根据首页点击条目的id对网络请求获得相应数据，此界面对网络获取到数据进行处，解析，展示在webview中，自定义toolbar布局，实现收藏，评论。
+4.收藏：利用GreenDao数据库框架实现，点击收藏将数据保存到数据库，并在收藏页面展示。避免重复收藏：进入日报详情页面先查询数据库是否有相同id,为true，点击提示已收藏，为false则收藏。
+5.首页侧滑栏：根据网络请求获取主题日报分类，根据点击不同主题，发送网络请求，获取不同主题日报内容显示。</p>
+
+<hr>
+
+<p>三、糗事百科app模仿</p>
+
+<hr>
+
+<p>项目时间： 2周
+开发工具： Android Studio
+使用技术： Retrofit+okhttp+Gson+Mvp
+功能实现： 1.引导页：启动app先冷启动加载本地图片，随后请求网络图片，实现广告展示，设定时间或跳转主页，同时支持直接跳过广告。
+2.首页：利用fragment加载不同主题内容。分为5个板块。
+3.糗事板块：利用viewpager+fragment实现块级元素内容展示。解决了切换父布局对子fragment的冲突问题。
+4.糗事板块子模块：利用百度定位sdk，定位当前位置经纬度，网络请求数据，对接受到的数据进行判断分析，显示在recyclerview中，实现段子的展示。
+上拉加载，下拉刷新。
+5.子模块内容详情：根据点击的item传递的id,请求详情数据，和评论数据。头部显示段子详情，底部用recyclerview显示评论列表，分为热评和全部评论部分。 </p>
+
+<hr>
+
+<p>自我评价    </p>
+
+<hr>
+
+<p>谨慎认真,踏实负责,刻苦耐劳。有良好的自我克制能力，对待同学同事诚恳友好，事业心强。有良好的表达能力，看到自己的优点，认识自己的不足，发挥自己的长处，改进自己的不足，我将以饱满的热情投入到崭
+新的工作中去。希望我能成为贵公司的一员。</p>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
