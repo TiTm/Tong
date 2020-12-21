@@ -1,0 +1,151 @@
+<p>
+    GreenDao. &nbsp;
+</p>
+<p>
+    Java Library:
+</p>
+<p>
+    compile <span style="color:#6a8759;">&#39;de.greenrobot:greendao-generator:2.0.0&#39;</span>
+</p>
+<p>
+    <span style="font-family: 微软雅黑, sans-serif;">Android Build App:</span>
+</p>
+<p>
+    <span style="font-family: 微软雅黑, sans-serif;">compile </span><span style="font-family: 微软雅黑, sans-serif; color: rgb(106, 135, 89);">&#39;de.greenrobot:greendao:2.0.0&#39;</span>
+</p>
+<p>
+    <span style="color:#6a8759;"></span>
+</p>
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:&#39;Consolas&#39;;font-size:12.0pt;">public  static void main(String[] args)throws Exception{    Schema schema=new Schema(2,&quot;com.example.lenovo.mvp_zhihu.GreenSql&quot;); //路径    de.greenrobot.daogenerator.Entity collection=schema.addEntity(&quot;Collection&quot;); //表名    collection.addIdProperty().primaryKey().autoincrement(); //id    collection.addStringProperty(&quot;Collectionid&quot;).notNull();  //字段    collection.addStringProperty(&quot;Collectiontitle&quot;);    collection.addStringProperty(&quot;Collectionimage&quot;);    collection.addStringProperty(&quot;Collectionshare_url&quot;);    collection.addStringProperty(&quot;Collectionbody&quot;);    new DaoGenerator().generateAll(schema, &quot;..\\mvp_zhihu\\app\\src\\main\\java&quot;);}</pre>
+<p>
+    <span style="color:#6a8759;"></span>
+</p>
+<p>
+    compile &#39;de.greenrobot:greendao:1.3.7&#39;
+</p>
+<p>
+    <br/>
+</p>
+<p>
+    生成 javalibrary &nbsp;
+</p>
+<p>
+    module:lib &nbsp;导入 &nbsp; &nbsp;compile &#39;de.greenrobot:greendao-generator:2.0.0&#39;
+</p>
+<p>
+    <br/>
+</p>
+<p>
+    public static &nbsp;void &nbsp;main(String[] args) throws Exception{
+</p>
+<p>
+    &nbsp; &nbsp; &nbsp; &nbsp; Schema schema=new Schema(1,&quot;com.example.lenovo.greendao.dp&quot;); //保存的包名
+</p>
+<p>
+    &nbsp; &nbsp; &nbsp; &nbsp; de.greenrobot.daogenerator.Entity user=schema.addEntity(&quot;user&quot;); //表名
+</p>
+<p>
+    &nbsp; &nbsp; &nbsp; &nbsp; user.addIdProperty().primaryKey();&nbsp;
+</p>
+<p>
+    &nbsp; &nbsp; &nbsp; &nbsp; user.addStringProperty(&quot;name&quot;).notNull(); &nbsp;//字段名
+</p>
+<p>
+    &nbsp; &nbsp; &nbsp; &nbsp; user.addStringProperty(&quot;pass&quot;);
+</p>
+<p>
+    <span class="Apple-tab-span" style="white-space:pre">		</span>// 支持一对一
+</p>
+<p>
+    //<span class="Apple-tab-span" style="white-space:pre">		</span>user.addToOne(Entity target, Property fkProperty);
+</p>
+<p>
+    <span class="Apple-tab-span" style="white-space:pre">		</span>// 支持一对多
+</p>
+<p>
+    //<span class="Apple-tab-span" style="white-space:pre">		</span>user.addToMany(Entity target, Property targetProperty);
+</p>
+<p>
+    &nbsp; &nbsp; &nbsp; &nbsp; new DaoGenerator().generateAll(schema, &quot;..\\GreenDao2\\app\\src\\main\\java&quot;); //保存路径
+</p>
+<p>
+    &nbsp; &nbsp; }
+</p>
+<p>
+    <span class="Apple-tab-span" style="white-space:pre">	</span>http://blog.csdn.net/u012272565/article/details/50394859
+</p>
+<p>
+    <br/>
+</p>
+<p>
+    调用方法<span class="Apple-tab-span" style="white-space:pre">	</span>
+</p>
+<p>
+    // 由DaoMaster的子类可已很容易的创建数据库连接
+</p>
+<p>
+    SQLiteDatabase db = new DaoMaster.DevOpenHelper(this, &quot;db_name&quot;, null).getWritableDatabase();
+</p>
+<p>
+    DaoMaster daoMaster = new DaoMaster(db);
+</p>
+<p>
+    DaoSession daoSession = daoMaster.newSession();
+</p>
+<p>
+    // 可以从daoSession中获取到每个DAO对象，DAO中封装了操作数据的方法。
+</p>
+<p>
+    UserDao userDao = daoSession.getUserDao();
+</p>
+<p>
+    <br/>
+</p>
+<p>
+    ————
+</p>
+<p>
+    // 插入一条数据
+</p>
+<p>
+    userDao.insert(user);
+</p>
+<p>
+    // 插入一组数据
+</p>
+<p>
+    userDao.insertInTx();
+</p>
+<p>
+    // 删除数据
+</p>
+<p>
+    userDao.delete();
+</p>
+<p>
+    // 删除一组数据
+</p>
+<p>
+    userDao.deleteInTx();
+</p>
+<p>
+    // 查询所有
+</p>
+<p>
+    userDao.loadAll()
+</p>
+<p>
+    // 条件查询，使用where，返回一组数据
+</p>
+<p>
+    userDao.queryBuilder().where(UserDao.Properties.Name.eq(&quot;admin1&quot;)).list();
+</p>
+<p>
+    // 更新数据
+</p>
+<p>
+    userDao.updateInTx();
+</p>
+<p>
+    <br/>
+</p>
